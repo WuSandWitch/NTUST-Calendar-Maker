@@ -13,6 +13,11 @@
 
 ![alt text](/imgs/image-5.png)
 
+## 其他
+- 有任何問題可以聯絡我！
+- 歡迎推 pr！
+
+
 ## 使用教學
 
 ### [！按我使用！](https://ntust-calendar-maker.vercel.app)
