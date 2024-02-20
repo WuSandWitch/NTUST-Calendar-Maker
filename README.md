@@ -1,21 +1,40 @@
-# Vue 3 + Vite
+<div align="center">
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# NTUST Calendar Maker | 台科大日曆製作工具
 
-While this project uses Vue.js, Vite supports many popular JS frameworks. [See all the supported frameworks](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+  <img width="200" src="src/assets/ntust_so_hard.png" alt="logo" style="border-radius:1em">
 
-## Deploy Your Own
+#### 製作 `.ics` 檔案以匯入通用日曆軟體！
 
-Deploy your own Vite project with Vercel.
+</div>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/vite&template=vite)
+## 功能
+可將學校課表匯入通用日曆軟體！
 
-_Live Example: https://vite-vue-template.vercel.app_
+![alt text](/imgs/image-5.png)
 
-### Deploying From Your Terminal
+## 使用教學
 
-You can deploy your new Vite project with a single command from your terminal using [Vercel CLI](https://vercel.com/download):
+### [！按我使用！](https://ntust-calendar-maker.vercel.app)
 
-```shell
-$ vercel
-```
+- 填入開學日期以及結業日期
+    - 112-2 開學日 2/19 | 結業日 6/10
+    ![alt text](/imgs/image.png)
+- 至選課系統下載課程資料 `.html` 檔
+    - 右鍵儲存
+    ![alt text](/imgs/image-1.png)
+    - 可將格式更改為 html only
+    ![alt text](/imgs/image-2.png)
+- 上傳檔案後生成 `.ics` 檔案
+    - 按下上傳
+    ![alt text](/imgs/image-3.png)
+    - 選擇剛剛下載的檔案
+    ![alt text](/imgs/image-4.png)
+    - 下載日曆檔案
+    ![alt text](/imgs/image-8.png)
+- 匯入通用通用日曆軟體 (e.g. Google Calendar)
+    - 按設定
+    ![alt text](/imgs/image-6.png)
+    - 選擇檔案並匯入指定日曆
+    ![alt text](/imgs/image-7.png)
+- 完成！
