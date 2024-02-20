@@ -46,12 +46,9 @@ function parseCourses(htmlContent) {
   courseRows.forEach((row, index) => {
     if (index > 0) { 
       const cells = row.querySelectorAll("td");
+
       if (cells.length > 5) {
-        const courseCode = cells[0].textContent.trim();
-        const courseName = cells[1].textContent.trim();
-        const courseCredits = cells[2].textContent.trim();
-        const courseType = cells[3].textContent.trim();
-        const courseTeacher = cells[4].textContent.trim();
+        const [courseCode, courseName, courseCredits, courseType, courseTeacher] = cells.map(cell => cell.textContent.trim());
 
         courses.push({ courseCode, courseName, courseCredits, courseType, courseTeacher });
       }
@@ -109,14 +106,13 @@ function parseCurriculum(htmlContent) {
   curriculumRows.forEach((row, index) => {
     if (index > 0) { 
       const cells = row.querySelectorAll("td");
+
       if (cells.length > 5) {
-        curriculum['星期一'].push(cells[2].textContent.trim().split('\n')[0].trim());
-        curriculum['星期二'].push(cells[3].textContent.trim().split('\n')[0].trim());
-        curriculum['星期三'].push(cells[4].textContent.trim().split('\n')[0].trim());
-        curriculum['星期四'].push(cells[5].textContent.trim().split('\n')[0].trim());
-        curriculum['星期五'].push(cells[6].textContent.trim().split('\n')[0].trim());
-        curriculum['星期六'].push(cells[7].textContent.trim().split('\n')[0].trim());
-        curriculum['星期日'].push(cells[8].textContent.trim().split('\n')[0].trim());
+        const days = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'];
+        
+        for (let i = 0; i < days.length; i++) {
+          curriculum[days[i]].push(cells[i + 2].textContent.trim().split('\n')[0].trim());
+        }
       }
     }
   });
