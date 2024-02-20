@@ -34,7 +34,7 @@
     ![alt text](/imgs/image-8.png)
 - 匯入通用通用日曆軟體 (e.g. Google Calendar)
     - 按設定
-    ![alt text](/imgs/image-6.jpg)
+    ![alt text](/imgs/image-6.png)
     - 選擇檔案並匯入指定日曆
-    ![alt text](/imgs/image-7.jpg)
+    ![alt text](/imgs/image-7.png)
 - 完成！
