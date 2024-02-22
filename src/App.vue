@@ -64,27 +64,30 @@ function parseClassRoom(htmlContent) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(htmlContent, "text/html");
 
-  let classRooms = [];
+  let classRooms = {
+    '星期一' : [],
+    '星期二' : [],
+    '星期三' : [],
+    '星期四' : [],
+    '星期五' : [],
+    '星期六' : [],
+    '星期日' : [],
+  }
   const curriculumRows = doc.querySelectorAll("table:nth-child(5) tbody tr");
 
   curriculumRows.forEach((row, index) => {
     if (index > 0) { 
       const cells = row.querySelectorAll("td");
       if (cells.length > 5) {
+        const days = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'];
         for (let i = 2; i < 9; i++) {
-          if (cells[i].textContent.trim().length == 0){
-            continue;
-          }
-          const courseName = cells[i].textContent.trim().split('\n')[0].trim();
 
           let courseClassRoom = '';
-          if (cells[i].textContent.trim().includes('\n')) {
+          if ((cells[i].textContent.trim().length != 0) && cells[i].textContent.trim().includes('\n')) {
             courseClassRoom = cells[i].textContent.trim().split('\n')[1].trim();
           }
 
-          if (!classRooms.find(c => c.courseName == courseName)) {
-            classRooms.push({ courseName, courseClassRoom });
-          }
+          classRooms[days[i-2]].push(courseClassRoom);
         }
       }
     }
@@ -155,7 +158,7 @@ function createEvents(courses,curriculum, classRooms) {
         currentEndTime = scheduleTime[currentClassIndex].endTime;
       }
       const courseInfo = courses.find(c => c.courseName == classes[currentClassIndex]);
-      const classRoom = classRooms.find(c => c.courseName == classes[currentClassIndex]).courseClassRoom;
+      const classRoom = classRooms[day][currentClassIndex];
       
       events[day].push({
         courseCode: courseInfo.courseCode,
