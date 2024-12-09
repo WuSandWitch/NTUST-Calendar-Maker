@@ -183,6 +183,10 @@ function downloadFile() {
     alert('請選擇起始日期和結束日期！');
     return;
   }
+  if(new Date(startDate.value) > new Date(endDate.value)) {
+    alert('結束日期需大於起始日期！');
+    return;
+  }
   if (!curriculumFile.value || !curriculumFile.value.files[0]) {
     alert('請上傳課表網頁檔案！');
     return;
