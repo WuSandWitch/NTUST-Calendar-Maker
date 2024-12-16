@@ -1,5 +1,5 @@
 <script setup>
-import VueDatePicker from '@vuepic/vue-datepicker';
+import DatePicker from 'primevue/datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import { ref } from 'vue';
 import * as ics from 'ics';
@@ -257,30 +257,64 @@ function downloadFile() {
   <h1 class="title">NTUST Calendar Maker</h1>
   <p>製作 .ics 檔案以匯入通用日曆軟體！</p>
   <p><a href="https://github.com/WuSandWitch/NTUST-Calendar-Maker">使用教學 | Github</a></p>
-  <VueDatePicker class="datePicker" v-model="startDate" :enable-time-picker="false" placeholder="起始日期（開學）" dark />
-  <VueDatePicker class="datePicker" v-model="endDate" :enable-time-picker="false" placeholder="結束日期（結業）" dark />
+  <div class="datePickerContainer">
+    <DatePicker class="datePicker" v-model="startDate" placeholder="起始日期（開學）" showIcon fluid iconDisplay="input" />
+    <DatePicker class="datePicker" v-model="endDate" placeholder="結束日期（結業）" showIcon fluid iconDisplay="input" />
+  </div>
   
   <label class="fileUpload" for="curriculumFile">
     <span v-text="fileName"></span>
     <input type="file" ref="curriculumFile" @change="handleFileUpload" id="curriculumFile" accept=".html"/>
   </label>
-  <button id="buttonDownload" @click="downloadFile">下載課表</button>
+  <button id="buttonDownload" @click="downloadFile" raised>下載課表</button>
 </template>
 
 <style scoped>
-.datePicker {
-  margin: 1em 0;
+.datePickerContainer {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
 }
+
+
+.title {
+  font-size: 2em;
+  font-weight: bold; 
+  text-align: center; 
+  background: linear-gradient(90deg, #d479d0, #a785eb); 
+  background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3); 
+  margin: 0.5em 0; 
+  font-family: 'Poppins', sans-serif; 
+}
+
+
 #buttonDownload {
   margin: 1em;
-  padding: 1em;
-  font-size: 1.5em;
-  border-radius: 1em;
-  background-color: #d15dcb;
+  padding: 0.8em 2em;
+  font-size: 1.25em; 
+  border-radius: 0.5em; 
+  background: linear-gradient(135deg, #d15dcb, #8c52ff); 
   color: white;
+  border: none; 
   cursor: pointer;
-  transition: background-color 300ms;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); 
+  transition: all 0.3s ease; 
 }
+
+#buttonDownload:hover {
+  background: linear-gradient(135deg, #b84db6, #7345d6); 
+  transform: scale(1.05); 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+#buttonDownload:active {
+  transform: scale(0.98); 
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
 .logo {
   height: 10em;
   border-radius: 1em;
