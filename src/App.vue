@@ -256,7 +256,7 @@ function downloadFile() {
   <img alt="Logo" src="./assets/ntust_so_hard.png" class="logo" />
   <h1 class="title">NTUST Calendar Maker</h1>
   <p>製作 .ics 檔案以匯入通用日曆軟體！</p>
-  <p><a href="https://github.com/WuSandWitch/NTUST-Calendar-Maker">使用教學 | Github</a></p>
+  <p><a href="https://github.com/Zudo-Developent/NTUST-Calendar-Maker">使用教學 | Github</a></p>
   <div class="datePickerContainer">
     <DatePicker class="datePicker" v-model="startDate" placeholder="起始日期（開學）" showIcon fluid iconDisplay="input" />
     <DatePicker class="datePicker" v-model="endDate" placeholder="結束日期（結業）" showIcon fluid iconDisplay="input" />

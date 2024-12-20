@@ -20,7 +20,7 @@
 
 ## 使用教學
 
-### [！按我使用！](https://ntust-calendar-maker.vercel.app)
+### [！按我使用！](https://ntust-calendar-maker.zudo.cc)
 
 - 填入開學日期以及結業日期
     - 112-2 開學日 02/19 | 結業日 06/10
