@@ -8,8 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@primevue/themes": "^4.2.4",
     "@vuepic/vue-datepicker": "^8.1.1",
     "ics": "^3.7.2",
+    "primevue": "^4.2.4",
     "vue": "^3.2.45"
   },
   "devDependencies": {
