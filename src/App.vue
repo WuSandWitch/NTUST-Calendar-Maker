@@ -3,6 +3,7 @@ import DatePicker from 'primevue/datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import { ref } from 'vue';
 import * as ics from 'ics';
+import { Toaster, toast } from 'vue-sonner';
 
 const startDate = ref();
 const endDate = ref();
@@ -180,15 +181,15 @@ function createEvents(courses,curriculum, classRooms) {
 
 function downloadFile() {
   if (!startDate.value || !endDate.value) {
-    alert('請選擇起始日期和結束日期！');
+    toast.error('請選擇起始日期和結束日期！');
     return;
   }
   if(new Date(startDate.value) > new Date(endDate.value)) {
-    alert('結束日期需大於起始日期！');
+    toast('結束日期需大於起始日期！');
     return;
   }
   if (!curriculumFile.value || !curriculumFile.value.files[0]) {
-    alert('請上傳課表網頁檔案！');
+    toast('請上傳課表網頁檔案！');
     return;
   }
 
@@ -253,6 +254,7 @@ function downloadFile() {
 </script>
 
 <template>
+  <Toaster richColors />
   <img alt="Logo" src="./assets/ntust_so_hard.png" class="logo" />
   <h1 class="title">NTUST Calendar Maker</h1>
   <p>製作 .ics 檔案以匯入通用日曆軟體！</p>
