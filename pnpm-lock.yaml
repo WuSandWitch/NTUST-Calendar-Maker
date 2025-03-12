@@ -22,6 +22,9 @@ importers:
       vue:
         specifier: ^3.2.45
         version: 3.2.47
+      vue-sonner:
+        specifier: ^1.3.0
+        version: 1.3.0
     devDependencies:
       "@eslint/js":
         specifier: ^9.22.0
@@ -1250,7 +1253,10 @@ packages:
         optional: true
       terser:
         optional: true
-
+        
+  vue-sonner@1.3.0:
+    resolution: {integrity: sha512-jAodBy4Mri8rQjVZGQAPs4ZYymc1ywPiwfa81qU0fFl+Suk7U8NaOxIDdI1oBGLeQJqRZi/oxNIuhCLqsBmOwg==}
+    
   vue-eslint-parser@10.1.1:
     resolution:
       {
@@ -1259,7 +1265,7 @@ packages:
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
-
+      
   vue@3.2.47:
     resolution:
       {
@@ -1943,6 +1949,9 @@ snapshots:
       rollup: 3.14.0
     optionalDependencies:
       fsevents: 2.3.2
+
+
+  vue-sonner@1.3.0: {}
 
   vue-eslint-parser@10.1.1(eslint@9.22.0):
     dependencies:
